@@ -1,0 +1,174 @@
+body {
+    font-family: Arial;
+}
+
+#gameContainer {
+    position: relative;
+    width: 960px;
+    height: 450px;
+    margin: 0 auto;
+    border: 1px solid #999999;
+}
+
+#gameContainer #outcome {
+    position: absolute;
+    top: 205px;
+    width: 100%;
+    display: none;
+}
+
+#gameContainer #outcome span{
+    font-size: 48px;
+    padding: 0px 101px 0px 104px;
+    background: #369;
+    color: #FFF;
+}
+
+.playerContainer {
+    width: 358px;
+    height: 450px;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+.player {
+    padding: 10px;
+    text-align: center;
+    display:none;
+}
+
+.playerContainer .titleBox {
+    background: #EFEFEF url(../images/titleBarBg.png) repeat-x;
+    border-bottom: 1px solid #D5D5D5;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#controls {
+    width: 220px;
+    height: 425px;
+    padding: 10px;
+    padding-top: 15px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    text-align: center;
+}
+
+#score span {
+    font-size: 72px;
+}
+
+#controls .buttons {
+    display: block;
+    margin: 10px;
+}
+
+.gesture {
+    width: 50px;
+    height: 50px;
+    border: 1px solid yellowgreen;
+    display: inline-block;
+}
+
+.rockIcon {
+    background: #EFEFEF url(../images/icon-gestures.png) no-repeat;
+}
+.paperIcon {
+    background: #EFEFEF url(../images/icon-gestures.png) no-repeat;
+    background-position: -52px 0px;
+}
+.scissorIcon {
+    background: #EFEFEF url(../images/icon-gestures.png) no-repeat;
+    background-position: -113px 0px;
+}
+.lizardIcon {
+    background: #EFEFEF url(../images/icon-gestures.png) no-repeat;
+    background-position: -165px 0px;
+}
+.spockIcon {
+    background: #EFEFEF url(../images/icon-gestures.png) no-repeat;
+    background-position: -218px 0px;
+}
+
+.rock {
+    background-position: 0px 0px;
+}
+.paper {
+    background-position: -358px 0px;
+}
+.scissor {
+    background-position: -780px 0px;
+}
+.lizard {
+    background-position: -1113px 0px;
+}
+.spock {
+    background-position: -1480px 0px;
+}
+
+.gestureChoice {
+    width: 338px;
+    height: 338px;
+    background-image: url(../images/large-gestures.png);
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0px;
+}
+
+.floatLeft {
+    float:left;
+}
+
+.floatRight {
+    float:right;
+}
+
+
+input[disabled] {
+    background: #FCFCFC;
+    border: 1px solid #EAEAEA;
+    color: #D5D5D5;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 14px 6px 14px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 12px;
+}
+
+.basicBtn {
+    background: url(../images/blueBtn.png) repeat-x 0 0;
+    border: 1px solid #3581C1;
+    color: #FFFFFF;
+    margin: 5px;
+}
+
+.basicBtn:hover {
+    background-position: 0 -25px;
+}
+
+.redBtn {
+    background: url(../images/redBtn.png) repeat-x 0 0;
+    border: 1px solid #9D342A;
+    color: white;
+}
+.redBtn:hover {
+    background-position: 0 -25px;
+}
+
+#btnNextRound {
+    display: none;
+}
