@@ -24,3 +24,7 @@ To compile/test/install pom to maven repository, run the following command in th
 
 To run, run the following command in the folder root - <code>mvn exec:java</code>
 
+To generate JavaDoc, run the following command in the folder root - <code>mvn javadoc:javadoc</code> - this will generate <code>/target/site/apidocs/index.html</code> and all its assets
+
+You will also find the target folder after running <code>mvn clean install</code> or <code>mvn javadoc:javadoc</code> contains the artifcats for the application.
+

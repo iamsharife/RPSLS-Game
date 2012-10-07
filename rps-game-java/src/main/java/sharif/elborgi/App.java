@@ -13,15 +13,15 @@ public class App {
     Gesture lizard = new Gesture("Lizard");
     Gesture spock = new Gesture("Spock");
 
-    private int playerScore = 0;
-    private int computerScore = 0;
-
     public static void main(String[] args) {
         System.out.println("======= Welcome to the #1 Game - Waste an Hour Having Fun =======");
         App app = new App();
         app.execute();
     }
 
+    /**
+     * This runs the game
+     */
     public void execute() {
         Game game = createGame();
 
@@ -47,20 +47,28 @@ public class App {
             int outcome = game.getWinner(choice, computerGesture);
 
             if (outcome == GestureSetting.DRAWN) {
-                System.out.println("Draw! " + getScore());
+                System.out.println("Draw! " + game.getScore());
             } else if (outcome == GestureSetting.WINNER) {
-                playerScore++;
-                System.out.println("Your a WINNER! " + getScore());
+                game.updatePlayerScore();
+                System.out.println("Your a WINNER! " + game.getScore());
             } else if (outcome == GestureSetting.LOSER) {
-                computerScore++;
-                System.out.println("Unlucky! Maybe next time! " + getScore());
+                game.updateComputerScore();
+                System.out.println("Unlucky! Maybe next time! " + game.getScore());
 
             }
 
+            System.out.println("");
             System.out.print("Make your choice: ");
         }
     }
 
+    /**
+     * Based on the input, will return the gesture mapped to it.
+     *
+     * @param input a string value representing a given gesture
+     * @return the gesture chosen
+     * @throws IllegalArgumentException if the input doesnt match anything
+     */
     public Gesture getGesture(String input) {
         if (input.equals("R")) {
             return rock;
@@ -77,6 +85,11 @@ public class App {
         throw new IllegalArgumentException();
     }
 
+    /**
+     * Creates a game, applies the settings and returns the game object
+     *
+     * @return a game object with the settings applied
+     */
     public Game createGame() {
 
         Game game = new Game();
@@ -107,10 +120,6 @@ public class App {
         game.addSetting(new GestureSetting(spock, spockBeats));
 
         return game;
-    }
-
-    private String getScore() {
-        return playerScore + " - " + computerScore;
     }
 
 }
